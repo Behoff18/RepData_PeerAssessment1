@@ -120,7 +120,7 @@ missingIntervals &lt;- sum(is.na(ds$interval))
 missingDays &lt;- tapply(!is.na(ds$steps), ds$date, sum, na.rm=TRUE)
 missingDays &lt;- sum(missingDays == 0)
 incompleteDays &lt;- sum(missingDays &gt; 0 &amp;&amp; missingDays &lt; 288)</code></pre>
-<p>There are 2304 records where there are missing ‘steps’ (coded as NA) in the data. There are 0 records where there are missing ‘dates’ values (coded as NA) in the data. There are 0 records where there are missing ‘interval’ values (coded as NA) in the data. There are 8 days where there is not a single complete record. But there are 1 days where the days is incomplete - i.e. fewer than 288 complete records.</p>
+<p>There are 2304 records where there are missing ‘steps’ (coded as NA) in the data.<br />There are 0 records where there are missing ‘dates’ values (coded as NA) in the data.<br />There are 0 records where there are missing ‘interval’ values (coded as NA) in the data.<br />There are 8 days where there is not a single complete record.<br />But there are 1 days where the days is incomplete - i.e. fewer than 288 complete records.</p>
 <p>The presence of missing days may introduce bias into some calculations or summaries of the data.</p>
 <p>Replacing the missing steps with the mean for the day is not meaningful as each day with a single missing data record has a complete day of missing data. A more reasonable strategy would be to replace them with the mean for the interval (5 minute period).</p>
 <p>dsCeaned will be a new dataset that is equal to the original dataset but with the missing data filled in.</p>
